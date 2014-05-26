@@ -1,0 +1,15 @@
+{
+  "name": "toki-pona-to-hex",
+  "version": "0.1.0",
+  "description": "convert toki pona to hex",
+  "author": "Evan Hahn",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "devDependencies": {
+    "should": "3.3.x",
+    "mocha": "1.19.x",
+    "coffee-script": "1.7.x"
+  }
+}
