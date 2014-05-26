@@ -5,11 +5,13 @@
   "author": "Evan Hahn",
   "main": "index.js",
   "scripts": {
+    "build": "./node_modules/browserify/bin/cmd.js index.js -s tokipona > dist/tokipona-to-hex.js",
     "test": "./node_modules/mocha/bin/mocha"
   },
   "devDependencies": {
     "should": "3.3.x",
     "mocha": "1.19.x",
-    "coffee-script": "1.7.x"
+    "coffee-script": "1.7.x",
+    "browserify": "4.1.x"
   }
 }
