@@ -1,9 +1,9 @@
 var words = require("./words.json").words;
-var punctuation = require("./punctuations.json").punctuations;
+var punctuations = ".!?".split("");
 
 var table = words.map(function(word) {
   return word.word;
-}).concat(punctuation);
+}).concat(punctuations);
 
 module.exports = {
 
@@ -19,15 +19,17 @@ module.exports = {
   },
 
   fromHex: function fromHex (buffer) {
-
-    var words = [];
+    var result = "";
     for (var i = 0; i < buffer.length; i ++) {
-      var code = buffer[i];
-      words.push(table[code]);
+      var character = table[buffer[i]];
+      if (character) {
+        result += character + " ";
+      }
     }
-
-    return words.join(" ");
-
+    return result.trim().replace(
+      /\s+([\.!\?])/g,
+      "$1"
+    );
   }
 
 };
